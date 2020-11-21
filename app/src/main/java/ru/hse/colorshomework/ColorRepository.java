@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ColorRepository {
-    public static Short DATA_SIZE;
+    public static int DATA_SIZE = 3;
 
     private static volatile ColorRepository mInstance;
 
@@ -36,7 +36,7 @@ public class ColorRepository {
     // Функция инициализации списка цветов
     protected List<ColorItem> initializeData() {
         final List<ColorItem> data = new ArrayList<>();
-        for (short position = 0; position < DATA_SIZE; position ++) {
+        for (int position = 0; position < DATA_SIZE; position ++) {
             data.add(new ColorItem(position+1));
         }
         return data;

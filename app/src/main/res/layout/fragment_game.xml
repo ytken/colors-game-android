@@ -10,6 +10,7 @@
         android:id="@+id/imageView_3"
         android:layout_width="80dp"
         android:layout_height="120dp"
+        android:background="@drawable/black_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.636"
@@ -22,6 +23,7 @@
 
     <ImageView
         android:id="@+id/imageView_1"
+        android:background="@drawable/black_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView_2"
         app:layout_constraintHorizontal_bias="0.372"
@@ -39,6 +41,7 @@
         android:id="@+id/imageView_2"
         android:layout_width="80dp"
         android:layout_height="120dp"
+        android:background="@drawable/black_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +54,7 @@
         android:id="@+id/imageView_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/black_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -75,13 +79,15 @@
 
     <TextView
         android:id="@+id/score_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Score :"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:text="score"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934"
-        tools:layout_editor_absoluteX="300dp" />
+        app:layout_constraintVertical_bias="0.876" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,13 +2,15 @@ package ru.hse.colorshomework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class GameActivity extends AppCompatActivity implements GameFragment.IListener{
+public class GameActivity extends AppCompatActivity implements GameFragment.FragmentListener{
 
+    protected static final String TAG_CUR_FRAGMENT = "CUR_FRAGMENT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,15 @@ public class GameActivity extends AppCompatActivity implements GameFragment.ILis
             }
         });
 
+        GameFragment gameFragment = GameFragment.newInstance(0);
+        getSupportFragmentManager().beginTransaction().
+                add(R.id.fragment, gameFragment).addToBackStack(TAG_CUR_FRAGMENT).commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     @Override
@@ -33,7 +44,9 @@ public class GameActivity extends AppCompatActivity implements GameFragment.ILis
     }
 
     @Override
-    public void onColorClicked(int number) {
-
+    public void newFragment(int curScore) {
+        GameFragment gameFragment = GameFragment.newInstance(curScore);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment, gameFragment, TAG_CUR_FRAGMENT).addToBackStack(TAG_CUR_FRAGMENT).commit();
     }
 }
